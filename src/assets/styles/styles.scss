@@ -1,8 +1,11 @@
 @import './base/base';
 
-// Views
 
 
 // Components
+@import './components/layout';
 @import './components/sidebar';
 @import './components/header';
+@import './components/pokemonList';
+@import './components/pokemonCard';
+@import './components/pokemonDetails';

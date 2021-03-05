@@ -1,0 +1,53 @@
+.card-single {
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    background-color: #FFF;
+    margin-bottom: 1.5rem;
+}
+
+.card-body {
+    padding: 1.3rem 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: $text-color;
+}
+
+.card-body h5 {
+    font-size: 1.4rem;
+    margin-top: .2rem;
+    font-weight: 500;
+}
+
+.card-body h4 {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.card-pokemon img{
+    width: 200px;
+}
+
+.card-footer {
+    padding: 1rem 1rem;
+    text-align: center;
+}
+
+.badge {
+    padding: .2rem .5rem;
+    margin: 0 .5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: .7rem;
+    font-weight: 300;
+    font-size: .8rem;
+    color: #fff;
+}
+
+.badge.success {
+    background: rgb(78, 151, 5);
+}
+
+.badge.warning {
+    background: blueviolet;
+}

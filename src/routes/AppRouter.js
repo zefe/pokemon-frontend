@@ -1,20 +1,28 @@
 import React from 'react';
-import { Home } from '../views/Home';
-
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { Layout } from '../components/Layout/Layout';
+import { HomeView } from '../views/HomeView';
+import { PokemonView } from '../views/PokemonView';
 
 
 export const AppRouter = () => {
     return (
         <Router>
-           <div>
+           <Layout>
                <Switch>
                     <Route 
                         exact 
-                        path="/login" 
-                        component={ Home }
+                        path="/" 
+                        component={ HomeView }
                     />
+                    <Route 
+                        exact 
+                        path="/pokemon/:pokemonName" 
+                        component={ PokemonView }
+                    />
+                    <Redirect to="/" />
                </Switch>
-            </div>    
+            </Layout>    
         </Router>
     )
 }

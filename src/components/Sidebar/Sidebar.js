@@ -31,7 +31,7 @@ export const Sidebar = () => {
                 <div className="sidebar-footer">
                     <ul>
                         <li>
-                            <a href="">
+                            <a href="https://google.com">
                                 <span><LogOut /></span>
                                 <span>Log out</span>
                             </a>
@@ -40,7 +40,6 @@ export const Sidebar = () => {
                 </div>
             </div>
             
-            <label for="sidebar-toggle" className="ti-menu-alt sidebar-icon-menu">label</label>
         </>
     )
 }

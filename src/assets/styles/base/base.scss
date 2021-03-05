@@ -17,7 +17,13 @@ $gradient2-color: #F2F4FF;
 body {
     background-image: linear-gradient($gradient1-color, $gradient2-color);
     background-repeat: no-repeat;
-    min-height: 100vh;
+}
+
+main {
+    margin-top: 90px;
+    background-color: var(--background-color);
+    min-height: 90vh;
+    padding: 1rem 0;
 }
 
 input {

@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './assets/styles/styles.scss';
-import { Home } from './views/Home';
+import { PokemonApp } from './PokemonApp';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <PokemonApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
