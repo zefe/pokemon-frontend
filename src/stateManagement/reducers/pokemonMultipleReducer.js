@@ -12,7 +12,8 @@ export const pokemonMultipleReducer = (state = initialState, action) => {
             case types.POKEMON_MULTIPLE_LOADING:
                 return {
                     ...state,
-                    loading: true
+                    loading: true,
+                    errorMessage: ""
                 }
             case types.POKEMON_MULTIPLE_FAIL:
                 return {

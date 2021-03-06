@@ -5,8 +5,7 @@ import avatar from '../../assets/images/avatar.png';
 import { getPokemon } from '../../stateManagement/actions/pokemonActions';
 
 
-export const PokemonDetails = ({ history }) => {
-
+export const PokemonDetails = () => {
 
     const { pokemonName } = useParams();
     
@@ -18,7 +17,7 @@ export const PokemonDetails = ({ history }) => {
 
     useEffect( ()=> {
         dispatch(getPokemon(pokemonName))
-    }, []);
+    }, [dispatch]);
 
     const ShowData = () => {
 
@@ -29,7 +28,7 @@ export const PokemonDetails = ({ history }) => {
                     <div className="card-single-left">
                         <div className="card-body-details">
                             <div className="card-pokemon-details">
-                                <img src={avatar} alt="imagen" />
+                                <img src={pokemon.sprites.other.dream_world.front_default} alt="imagen" />
                             </div>
                         </div>
                         <div className="card-footer-details">
@@ -41,14 +40,11 @@ export const PokemonDetails = ({ history }) => {
                         <div className="card-header-details">
                             <h2>{ pokemonName }</h2>
                             <div className="badge-details">
+
                                 {
                                     pokemon.types.map(item => {
                                         return (
-
-                                            (item.type.name === 'grass') ? <span className="badge-details success"> {item.type.name} </span> 
-                                            :
-                                            <span className="badge-details warning"> {item.type.name} </span>
-                                            
+                                            <span className={`badge ${ item.type.name }` }> {item.type.name} </span>  
                                         )
                                     })
                                 }         
@@ -101,7 +97,6 @@ export const PokemonDetails = ({ history }) => {
 
     }
 
-    console.log(pokemonState.data[pokemonName])
 
     return (
         <main>

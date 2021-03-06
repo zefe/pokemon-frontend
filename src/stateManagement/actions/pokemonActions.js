@@ -1,7 +1,7 @@
 import axios from "axios";
 import { types } from "../types/pokemonTypes";
 
-export const getPokemonList = () => {
+export const getPokemonList = (page) => {
     return async( dispatch ) => {
 
         try{
@@ -11,13 +11,23 @@ export const getPokemonList = () => {
             });
 
             const perPage = 15;
-            const offset = (perPage * 15) - perPage;
+            const offset = (page * perPage) - perPage;
 
             const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${perPage}&offset=${offset}`)
 
+            const promises = res.data.results.map( async(pokemon) => {
+                return await axios.get(`${pokemon.url}`)
+            });
+
+            const results = await Promise.all(promises);
+
+            let pokemonData = results.map((pokemon) => {
+                return pokemon.data;
+            })
+
             dispatch({
                 type: types.POKEMON_LIST_SUCCESS,
-                payload: res.data
+                payload: pokemonData
             });
 
         }
@@ -33,7 +43,6 @@ export const getPokemonList = () => {
 
 export const getPokemon = (pokemon) => {
     return async( dispatch ) => {
-
         try{
 
             dispatch({

@@ -1,7 +1,7 @@
 
 .pokemon-details {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
 }
@@ -63,8 +63,14 @@
         font-size: 1.8rem;
         font-weight: 600;
         padding: 0 1rem;
-    }   
+        text-transform: lowercase;
+    }
+
+    h2:first-letter {
+        text-transform: uppercase;
+    }
 }
+
 
 
 
@@ -93,16 +99,6 @@
     box-shadow: 2px 2px 2px rgb(22, 22, 22);
     border-radius: 10px;
 
-}
-
-.badge-details .success {
-    background: rgb(78, 151, 5);
-    margin-left: .4rem;
-}
-
-.badge-details .warning {
-    background: blueviolet;
-    margin-left: .8rem;
 }
 
 .loading {

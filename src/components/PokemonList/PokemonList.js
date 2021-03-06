@@ -12,30 +12,14 @@ export const PokemonList = () => {
 
         FetchData(1);
 
-    }, [])
+    }, []);
 
 
-    const FetchData = (page) => {
+    const FetchData = (page=1) => {
         dispatch( getPokemonList(page)  );
-    }
-
-    
-    console.log("pokemonList")
-    console.log(pokemonList)
-
-    console.log(pokemonList.data.length !== 0)
+    };
 
     const ShowData = () => {
-
-        if(pokemonList.data.length !== 0){
-
-            return pokemonList.data.map(pokemon => (
-                <PokemonCard
-                    { ...pokemon }
-                />
-            ))
-
-        }
 
         if(pokemonList.loading){
             return (
@@ -43,6 +27,16 @@ export const PokemonList = () => {
                     <h3>Loading...</h3>
                 </div>
             )
+        }
+
+        if(pokemonList.data.length !== 0){
+
+            return pokemonList.data.map(pokemon => (
+                <PokemonCard
+                    pokemon={pokemon}
+                />
+            ))
+
         }
 
         if(pokemonList.errorMessage !== "") {

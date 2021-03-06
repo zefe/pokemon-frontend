@@ -14,7 +14,8 @@ export const pokemonListReducer = (state = initialState, action) => {
             case types.POKEMON_LIST_LOADING:
                 return {
                     ...state,
-                    loading: true
+                    loading: true,
+                    errorMessage:""
                 }
             case types.POKEMON_LIST_FAIL:
                 return {
@@ -26,8 +27,9 @@ export const pokemonListReducer = (state = initialState, action) => {
                 return {
                     ...state,
                     loading: false,
-                    data: action.payload.results,
-                    errorMessage: ""
+                    data: action.payload,
+                    errorMessage: "",
+                    count: action.payload.count
                 }
                 
         
