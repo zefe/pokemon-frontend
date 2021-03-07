@@ -15,6 +15,8 @@ export const getPokemonList = (page) => {
 
             const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${perPage}&offset=${offset}`)
 
+            const count = res.data.count ;
+
             const promises = res.data.results.map( async(pokemon) => {
                 return await axios.get(`${pokemon.url}`)
             });
@@ -27,7 +29,7 @@ export const getPokemonList = (page) => {
 
             dispatch({
                 type: types.POKEMON_LIST_SUCCESS,
-                payload: pokemonData
+                payload: { pokemonData, count }
             });
 
         }
@@ -46,24 +48,33 @@ export const getPokemon = (pokemon) => {
         try{
 
             dispatch({
-                type: types.POKEMON_MULTIPLE_LOADING
+                type: types.POKEMON_DETAILS_LOADING
             });
 
             const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
 
             dispatch({
-                type: types.POKEMON_MULTIPLE_SUCCESS,
+                type: types.POKEMON_DETAILS_SUCCESS,
                 payload: res.data,
                 pokemonName: pokemon
             });
 
+
         }
         catch(e){
             dispatch({
-                type: types.POKEMON_MULTIPLE_FAIL
+                type: types.POKEMON_DETAILS_FAIL
             });
             console.log(e);
         }
 
     }
 }
+
+export const uiShowBtnBack = () => ({
+    type: types.UI_SHOW_BTN_BACK
+})
+
+export const uiHideBtnBack = () => ({
+    type: types.UI_HIDE_BTN_BACK
+})

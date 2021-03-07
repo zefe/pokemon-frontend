@@ -20,8 +20,8 @@ body {
 }
 
 main {
-    margin-top: 90px;
-    min-height: 90vh;
+    margin-top: 85px;
+    min-height: calc(100vh - 90px);
     padding: 1rem 0;
 }
 
@@ -53,3 +53,5 @@ input:active {
    color: $text-color;
 }
 
+
+//Responsive

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import avatar from '../../assets/images/avatar.png';
 import { getPokemon } from '../../stateManagement/actions/pokemonActions';
+import { Spinner } from '../Common/Spinner';
 
 
 export const PokemonDetails = () => {
@@ -16,8 +16,8 @@ export const PokemonDetails = () => {
     const pokemon = pokemonState.data[pokemonName];
 
     useEffect( ()=> {
-        dispatch(getPokemon(pokemonName))
-    }, [dispatch]);
+        dispatch( getPokemon(pokemonName) )
+    }, []);
 
     const ShowData = () => {
 
@@ -38,13 +38,16 @@ export const PokemonDetails = () => {
                     </div>
                     <div className="card-single-right">
                         <div className="card-header-details">
-                            <h2>{ pokemonName }</h2>
+                            <h2>{ pokemon.name }</h2>
                             <div className="badge-details">
 
                                 {
                                     pokemon.types.map(item => {
                                         return (
-                                            <span className={`badge ${ item.type.name }` }> {item.type.name} </span>  
+                                            <span 
+                                                className={`badge ${ item.type.name }` }
+                                                key={item.type.name}
+                                            > {item.type.name} </span>  
                                         )
                                     })
                                 }         
@@ -82,7 +85,7 @@ export const PokemonDetails = () => {
         if(pokemonState.loading){
             return (
                 <div className="loading">
-                    <h3>Loading...</h3>
+                    <Spinner />
                 </div>
             )
         }

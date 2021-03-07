@@ -2,6 +2,8 @@ import { React, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPokemonList } from '../../stateManagement/actions/pokemonActions';
 import { PokemonCard } from './PokemonCard';
+import ReactPaginate from 'react-paginate';
+import { Spinner } from '../Common/Spinner';
 
 export const PokemonList = () => {
 
@@ -24,16 +26,17 @@ export const PokemonList = () => {
         if(pokemonList.loading){
             return (
                 <div className="loading">
-                    <h3>Loading...</h3>
+                    <Spinner />
                 </div>
             )
         }
 
         if(pokemonList.data.length !== 0){
 
-            return pokemonList.data.map(pokemon => (
+            return pokemonList.data.map( (pokemon) => (
                 <PokemonCard
-                    pokemon={pokemon}
+                    pokemon={ pokemon }
+                    key={ pokemon.id }
                 />
             ))
 
@@ -51,6 +54,19 @@ export const PokemonList = () => {
         <main>
             <div className="home-cards">
                 {ShowData()}
+            </div>
+            <div className="pagination-content">
+                <ReactPaginate 
+                    pageCount={Math.ceil(pokemonList.count / 15)}
+                    pageRangeDisplayed={ 2 }
+                    marginPagesDisplayed={ 1 }
+                    onPageChange={ (data) => FetchData(data.selected + 1)}
+                    containerClassName={"pagination"}
+                    pageLinkClassName={"pagination-link"}
+                    activeClassName={"pagination-active-link"}
+                    nextClassName={"pagination-next-link"}
+                    previousClassName={"pagination-previous-link"}
+                />
             </div>
         </main>
     )

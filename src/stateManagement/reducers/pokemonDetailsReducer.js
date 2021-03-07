@@ -6,22 +6,22 @@ const initialState = {
     errorMessage: ""
 };
 
-export const pokemonMultipleReducer = (state = initialState, action) => {
+export const pokemonDetailsReducer = (state = initialState, action) => {
 
         switch (action.type) {
-            case types.POKEMON_MULTIPLE_LOADING:
+            case types.POKEMON_DETAILS_LOADING:
                 return {
                     ...state,
                     loading: true,
                     errorMessage: ""
                 }
-            case types.POKEMON_MULTIPLE_FAIL:
+            case types.POKEMON_DETAILS_FAIL:
                 return {
                     ...state,
                     loading: false,
                     errorMessage: "Pokemon not found"
                 }
-            case types.POKEMON_MULTIPLE_SUCCESS:
+            case types.POKEMON_DETAILS_SUCCESS:
                 return {
                     ...state,
                     loading: false,

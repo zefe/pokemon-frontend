@@ -25,8 +25,8 @@ export const Sidebar = () => {
                         <p>
                             "I worked hard on my test"
                         </p>
-
                     </div>
+                    
                 </div>
                 <div className="sidebar-footer">
                     <ul>

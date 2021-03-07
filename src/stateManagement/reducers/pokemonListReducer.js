@@ -27,7 +27,7 @@ export const pokemonListReducer = (state = initialState, action) => {
                 return {
                     ...state,
                     loading: false,
-                    data: action.payload,
+                    data: action.payload.pokemonData,
                     errorMessage: "",
                     count: action.payload.count
                 }

@@ -1,0 +1,51 @@
+.menu-container {
+    width: 100%;
+    height: 80px;
+    background-color: $main-color;
+    display: flex;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    transition: left 800ms;
+}
+
+.menu-icon {
+    width: 15%;
+}
+
+.menu-icon label{
+    width: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.logo-responsive  {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.logo-responsive img {
+    width: 150px;
+}
+
+@media only screen and (max-width: 860px) {
+
+    .menu-container {
+        visibility: visible;
+
+    }
+
+    header {
+        left: 30px;
+    }
+
+    #sidebar-toggle:checked ~ .menu-container {
+        margin-left: 230px;
+        .logo-responsive img { 
+            visibility: hidden;
+        }
+    }
+
+}

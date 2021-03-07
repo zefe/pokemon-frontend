@@ -1,3 +1,21 @@
+/* TOGGLE */
+#sidebar-toggle {
+    display: none;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    width: 0;
+} 
+
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: 60px;
+} 
+
+#sidebar-toggle:checked ~  header {
+    width: calc(100% - 90px);
+    left: 70px;
+} 
+
 header {
     position: fixed;
     left: 240px;
@@ -9,7 +27,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: left 500ms;
+    transition: left 800ms;
     
 }
 
@@ -61,3 +79,54 @@ header {
 .back-btn img {
     width: 30px;
 }
+
+/* Responsive */
+@media only screen and (max-width: 860px) {
+    /* TOGGLE */
+
+    .sidebar {
+        width: 0;
+    } 
+
+    .main-content {
+        margin-left: 60px;
+    }
+    
+    header {
+        width: calc(100% - 80px);
+        left: 30px;
+    }
+
+    #sidebar-toggle:checked ~ .sidebar {
+        width: 240px;
+    } 
+    
+    
+    #sidebar-toggle:checked ~ .main-content {
+        margin-left: 60px;
+    } 
+    
+    #sidebar-toggle:checked ~ header {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    
+}
+
+@media only screen and (max-width: 860px) {
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 100%;
+    }
+    header {
+        margin: 5rem 0rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 0;
+    }
+}
+
