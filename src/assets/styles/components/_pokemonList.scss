@@ -1,3 +1,97 @@
+.loading {
+    width: 100%;
+    display: flex !important;
+    justify-content: center !important;
+}
+.search-pokemon {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: slateblue;
+    margin-bottom: 2rem;
+}
+.notfound {
+    text-align: center;
+    color: rgb(165, 11, 11);
+}
+
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: slategray;
+}
+
+.back-button {
+    width: 50%;
+}
+
+.back-btn {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    height: 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    background-color: $main-color;
+}
+
+.back-btn img {
+    width: 30px;
+}
+
+.search-wrapper {
+    width: 50%;
+}
+
+.search-wrapper form{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.search-wrapper button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    
+}
+
+.search-wrapper > .search-input {
+    width: 280px;
+}
+
+.search-input {
+    background: none;
+    outline: none;
+    font-size: 1rem;
+    padding-left: 30px;
+    height: 40px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.search-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    height: 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    background-color: $main-color;
+}
+
+.search-button img {
+    width: 30px;
+}
+
+
+
 .home-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -66,5 +160,12 @@
     main {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+    .home-cards {
+        grid-template-rows: 150px 150px;
+        grid-gap: 3rem 3px;
+    }
+    .card-body {
+        padding: 0;
     }
 }

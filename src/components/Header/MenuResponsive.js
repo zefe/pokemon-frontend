@@ -7,7 +7,7 @@ export const MenuResponsive = () => {
     return (
             <div className="menu-container">
                 <div className="menu-icon">
-                    <label for="sidebar-toggle" ><Menu /></label>
+                    <label htmlFor="sidebar-toggle" ><Menu /></label>
                 </div>
                 <div className="logo-responsive">  
                     <img src={logo} alt="logo" />
