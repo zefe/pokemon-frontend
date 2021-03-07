@@ -1,6 +1,6 @@
-import  {React, useEffect, useState } from 'react';
+import  {React, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { uiHideBtnBack, uiShowBtnBack, getPokemon } from '../../stateManagement/actions/pokemonActions';
 import searchIcon from '../../assets/icons/Search.svg';

@@ -158,3 +158,22 @@
         text-align: center;
     }
 }
+
+
+@media only screen and (max-width: 450px) {
+
+    .card-body {
+        padding: 0;
+    }
+
+    .card-pokemon img{
+        width: 80px;
+        height: 80px;
+        margin: 0;
+    }
+
+    .card-footer {
+        padding: .6rem .6rem;
+        text-align: center;
+    }
+}
