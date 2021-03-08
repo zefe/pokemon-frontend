@@ -47,8 +47,8 @@ export const PokemonDetails = () => {
         
     }
 
-    const searchById = () => {
-
+    const searchById = (e) => {
+        e.preventDefault();
         dispatch( getPokemon(searchText) );
         history.push(`/pokemon/${searchText}`);
         dispatch( uiShowBtnBack() );
@@ -151,14 +151,14 @@ export const PokemonDetails = () => {
                 <div className="search-container">
                     <div className="back-button" >
                         {
-                            btnBack && 
+                            
                             <div className="back-btn">
                                 <img src={back} alt="imagen" onClick={ handleShowBtn } />
                             </div>
                         }
                     </div>
                     <div className="search-wrapper-detail" >
-                        <form onSubmit={searchById}>
+                        <form onSubmit={ searchById }>
                             <input
                                 type="text"
                                 placeholder="Search"
