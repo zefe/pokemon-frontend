@@ -20,7 +20,7 @@ export const PokemonList = () => {
     const location = useLocation();
     const { q='' } = queryString.parse( location.search );
 
-    const [ formValues, handleInputChange, reset ] = useForm({
+    const [ formValues, handleInputChange ] = useForm({
         searchText: q
     });
 
@@ -32,7 +32,7 @@ export const PokemonList = () => {
     }, []);
 
 
-    const FetchData = (page=1) => {
+    const fetchData = (page=1) => {
         dispatch( getPokemonList(page)  );
     };
 
