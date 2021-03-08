@@ -1,6 +1,15 @@
 # Pokemon-webapp
 Web application for test
 
+## Demo
+
+[Watch the live project: ](https://pokapp.netlify.app/)
+
+![Pokemon web app home](https://github.com/zefe/pokemon-frontend/blob/main/src/assets/images/home.png)
+![Pokemon web app details](https://github.com/zefe/pokemon-frontend/blob/main/src/assets/images/detail1.png)
+![Pokemon web app mobile home](https://github.com/zefe/pokemon-frontend/blob/main/src/assets/images/mobile-home.png)
+![Pokemon web app mobile details](https://github.com/zefe/pokemon-frontend/blob/main/src/assets/images/mobile-det.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
