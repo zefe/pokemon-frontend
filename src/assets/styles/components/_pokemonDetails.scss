@@ -104,7 +104,6 @@ main {
     background-color: #fff;
     box-shadow: 2px 2px 10px rgba(86, 108, 214, .15);
     border-radius: 16px;
-
 }
 
 .loading {
@@ -146,11 +145,33 @@ main {
     .card-single-left, .card-single-right {
         justify-content: center;
         width: 80%;
-        margin: 2rem 0rem;
+        margin: 1rem 0rem;
     }
 
     .card-header-details {
         align-items: center;
+    }
+
+}
+
+
+@media only screen and (max-width: 450px) {
+
+    .search-container-detail {
+        display: flex;
+        justify-content: center;
+        background-color: darkgoldenrod;
+    }
+
+    .card-single-left {
+        width: 94%;
+        height: 400px;
+        padding: 1.5rem 0rem;
+    }
+
+    .card-single-right {
+        width: 94%;
+        padding: 1.5rem 0rem;
     }
 
 }
