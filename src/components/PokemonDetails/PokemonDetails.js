@@ -56,7 +56,7 @@ export const PokemonDetails = () => {
             return (
                 <>
                     <div className="search-pokemon">
-                        <div className="search-container">
+                        <div className="search-container-detail">
                             <div className="back-button" >
                                 {
                                     btnBack && 

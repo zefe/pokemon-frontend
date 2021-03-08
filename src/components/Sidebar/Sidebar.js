@@ -31,7 +31,7 @@ export const Sidebar = () => {
                 <div className="sidebar-footer">
                     <ul>
                         <li>
-                            <a href="https://google.com">
+                            <a href="https://github.com/zefe">
                                 <span><LogOut /></span>
                                 <span>Log out</span>
                             </a>

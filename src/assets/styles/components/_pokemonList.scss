@@ -159,11 +159,42 @@
         padding-left: 1rem;
         padding-right: 1rem;
     }
+
     .home-cards {
         grid-template-rows: 150px 150px;
         grid-gap: 3rem 3px;
     }
+
     .card-body {
         padding: 0;
+    }
+
+    .search-wrapper > .search-input {
+        width: 280px;
+    }
+    
+    .search-input {
+        width: 340px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    
+    .search-input {
+        width: 385px;
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+    
+    .search-input {
+        width: 340px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .search-input {
+        width: 280px;
     }
 }
