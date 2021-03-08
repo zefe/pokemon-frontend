@@ -3,7 +3,7 @@ Web application for test
 
 ## Demo
 
-[Watch the live project: ](https://pokapp.netlify.app/)
+[Watch the live project: ](https://pokemonap.herokuapp.com/)
 
 
 ![Pokemon web app home](https://github.com/zefe/pokemon-frontend/blob/main/src/assets/images/home.png)
