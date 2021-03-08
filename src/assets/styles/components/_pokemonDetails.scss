@@ -113,6 +113,28 @@ main {
     align-items: center;
 }
 
+.search-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.search-wrapper input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    
+}
+
+.search-wrapper > .search-input {
+    width: 280px;
+}
+
+
+
+
 @media only screen and (max-width: 860px) {
 
     .pokemon-details {

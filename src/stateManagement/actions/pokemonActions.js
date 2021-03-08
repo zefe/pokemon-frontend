@@ -10,7 +10,7 @@ export const getPokemonList = (page) => {
                 type: types.POKEMON_LIST_LOADING
             });
 
-            const perPage = 25;
+            const perPage = 65;
             const offset = (page * perPage) - perPage;
 
             const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${perPage}&offset=${offset}`)
@@ -71,26 +71,6 @@ export const getPokemon = (pokemon) => {
     }
 }
 
-export const filterByValue = (value) => {
-    return async(dispatch, getSate) => {
-
-        try {
-
-            let { data } = getSate().PokemonList;
-
-            const payload = getPokemonByName(value, data)
-
-            dispatch({
-                type: types.FILTER_BY_VALUE,
-                payload
-            });
-            
-        } catch (error) {
-            console.log(error)
-        }
-    }
-}
-
 export const uiShowBtnBack = () => ({
     type: types.UI_SHOW_BTN_BACK
 });
@@ -98,15 +78,3 @@ export const uiShowBtnBack = () => ({
 export const uiHideBtnBack = () => ({
     type: types.UI_HIDE_BTN_BACK
 });
-
-
-
-const getPokemonByName = (pokemonName='', data) => {
-
-    if(pokemonName === '') {
-        return [];
-    }
-    pokemonName.toLocaleLowerCase();
-    return data.filter( pokemon => pokemon.name.toLocaleLowerCase().includes( pokemonName) ||
-    pokemon.id.toString().includes(pokemonName) );
-}

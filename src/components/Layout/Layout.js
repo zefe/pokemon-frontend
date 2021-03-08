@@ -1,6 +1,5 @@
 import React from 'react';
-import { Header } from '../Header/Header';
-import { MenuResponsive } from '../Header/MenuResponsive';
+import { MenuResponsive } from '../MenuResponsive/MenuResponsive';
 import { Sidebar } from '../Sidebar/Sidebar';
 
 
@@ -9,7 +8,6 @@ export const Layout = ({ children }) => {
         <>
             <Sidebar />
             <MenuResponsive />
-            <Header />
             <div className="main-content">
                 {children}
             </div>
