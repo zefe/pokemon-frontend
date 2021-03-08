@@ -32,7 +32,7 @@ export const PokemonList = () => {
     }, []);
 
 
-    const fetchData = (page=1) => {
+    const FetchData = (page=1) => {
         dispatch( getPokemonList(page)  );
     };
 
