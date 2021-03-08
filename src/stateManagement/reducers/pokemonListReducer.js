@@ -31,14 +31,6 @@ export const pokemonListReducer = (state = initialState, action) => {
                     errorMessage: "",
                     count: action.payload.count
                 }
-            case types.FILTER_BY_VALUE:
-                return {
-                    ...state,
-                    loading: false,
-                    data: action.payload
-                }
-
-                
         
             default:
                 return state;

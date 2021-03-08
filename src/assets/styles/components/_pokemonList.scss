@@ -7,9 +7,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 100px;
-    background-color: slateblue;
-    margin-bottom: 2rem;
+    height: 80px;
+    margin-bottom: .5rem;
 }
 .notfound {
     text-align: center;
@@ -21,7 +20,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: slategray;
 }
 
 .back-button {
@@ -72,7 +70,8 @@
     padding-left: 30px;
     height: 40px;
     border-radius: 50px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 10px rgba(86, 108, 214, .15);
+    width: 340px;
 }
 
 .search-button {
@@ -106,10 +105,9 @@
 .pagination {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     margin: auto;
     list-style: none;
-    padding: 0;
     color: $text-color;
 }
 

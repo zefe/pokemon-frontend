@@ -1,10 +1,26 @@
+/* TOGGLE */
+#sidebar-toggle {
+    display: none;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    width: 0;
+} 
+
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: 60px;
+} 
+
+#sidebar-toggle:checked ~  header {
+    width: calc(100% - 90px);
+    left: 70px;
+}
+
 .menu-container {
     width: 100%;
     height: 80px;
     background-color: $main-color;
-    display: flex;
-    visibility: hidden;
-    display: flex;
+    display: none;
     align-items: center;
     transition: left 800ms;
 }
@@ -19,7 +35,6 @@
     justify-content: center;
 }
 
-
 .logo-responsive  {
     display: flex;
     justify-content: center;
@@ -30,15 +45,29 @@
     width: 150px;
 }
 
+/* Responsive */
 @media only screen and (max-width: 860px) {
+    /* TOGGLE */
+
+    .sidebar {
+        width: 0;
+    } 
+
+    .main-content {
+        margin-left: 60px;
+    }
 
     .menu-container {
-        visibility: visible;
+        display: flex;
 
     }
 
-    header {
-        left: 30px;
+    #sidebar-toggle:checked ~ .sidebar {
+        width: 240px;
+    } 
+    
+    #sidebar-toggle:checked ~ .main-content {
+        margin-left: 60px;
     }
 
     #sidebar-toggle:checked ~ .menu-container {
