@@ -7,8 +7,10 @@ main {
     width: 100%;
     min-height: 60vh;
     display: flex;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
+
 .pokemon-details {
     display: flex;
     justify-content: space-between;
@@ -106,19 +108,17 @@ main {
     border-radius: 16px;
 }
 
-.loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.search-wrapper-detail {
+    width: 50%;
 }
 
-.search-wrapper {
+.search-wrapper-detail form{
     display: flex;
     justify-content: flex-end;
     
 }
 
-.search-wrapper input{
+.search-wrapper-detail button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,11 +127,28 @@ main {
     
 }
 
-.search-wrapper > .search-input {
+.search-wrapper-detail input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+}
+
+.search-wrapper-detail > .search-input-detail {
     width: 280px;
 }
 
-
+.search-input-detail {
+    background: none;
+    outline: none;
+    font-size: 1rem;
+    padding-left: 30px;
+    height: 40px;
+    border-radius: 50px;
+    box-shadow: 2px 2px 10px rgba(86, 108, 214, .15);
+    width: 340px;
+}
 
 
 @media only screen and (max-width: 860px) {
@@ -157,10 +174,9 @@ main {
 
 @media only screen and (max-width: 450px) {
 
-    .search-container-detail {
+    .search-container {
         display: flex;
         justify-content: center;
-        background-color: darkgoldenrod;
     }
 
     .card-single-left {
@@ -174,4 +190,33 @@ main {
         padding: 1.5rem 0rem;
     }
 
+    .search-wrapper-detail {
+        display: flex;
+        justify-content: flex-end;
+        width: 300px;
+    }
+
+    .search-wrapper-detail > .search-input-detail {
+        width: 180px;
+    }
+
+}
+
+@media only screen and (max-width: 425px) {
+    .search-input-detail {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    
+    .search-input-detail {
+        width: 260px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .search-input-detail {
+        width: 200px;
+    }
 }

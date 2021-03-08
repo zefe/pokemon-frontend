@@ -107,6 +107,20 @@ export const PokemonList = () => {
             <div className="search-pokemon">
                 <div className="search-container">
                     <div className="back-button" >
+                
+                        <div className="pagination-content">
+                            <ReactPaginate 
+                                pageCount={Math.ceil(pokemonList.count / 15)}
+                                pageRangeDisplayed={ 2 }
+                                marginPagesDisplayed={ 1 }
+                                onPageChange={ (data) => FetchData(data.selected + 1)}
+                                containerClassName={"pagination"}
+                                pageLinkClassName={"pagination-link"}
+                                activeClassName={"pagination-active-link"}
+                                nextClassName={"pagination-next-link"}
+                                previousClassName={"pagination-previous-link"}
+                            />
+                        </div>
                         {
                             btnBack && 
                             <div className="back-btn">
@@ -141,20 +155,6 @@ export const PokemonList = () => {
             }
             <div className="home-cards">
                 {ShowData()}
-            </div>
-                
-            <div className="pagination-content">
-                <ReactPaginate 
-                    pageCount={Math.ceil(pokemonList.count / 15)}
-                    pageRangeDisplayed={ 2 }
-                    marginPagesDisplayed={ 1 }
-                    onPageChange={ (data) => FetchData(data.selected + 1)}
-                    containerClassName={"pagination"}
-                    pageLinkClassName={"pagination-link"}
-                    activeClassName={"pagination-active-link"}
-                    nextClassName={"pagination-next-link"}
-                    previousClassName={"pagination-previous-link"}
-                />
             </div>
         </main>
     )

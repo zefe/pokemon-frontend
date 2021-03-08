@@ -1,8 +1,4 @@
-.loading {
-    width: 100%;
-    display: flex !important;
-    justify-content: center !important;
-}
+
 .search-pokemon {
     display: flex;
     justify-content: center;
@@ -44,13 +40,13 @@
     width: 50%;
 }
 
-.search-wrapper form{
+.search-wrapper form {
     display: flex;
     justify-content: flex-end;
     
 }
 
-.search-wrapper button{
+.search-wrapper button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,6 +148,11 @@
     .main-content {
         margin: 0;
     }
+    
+    .pagination-content {
+        width: 40%;
+    }
+
 }
 
 @media only screen and (max-width: 450px) {
@@ -176,6 +177,9 @@
     .search-input {
         width: 340px;
     }
+    .pagination-content {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 425px) {
@@ -184,7 +188,6 @@
         width: 385px;
     }
 }
-
 
 @media only screen and (max-width: 375px) {
     
