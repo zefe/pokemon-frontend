@@ -56,7 +56,7 @@ export const PokemonDetails = () => {
             return (
                 <>
                     <div className="search-pokemon">
-                        <div className="search-container-detail">
+                        <div className="search-container">
                             <div className="back-button" >
                                 {
                                     btnBack && 
@@ -65,12 +65,12 @@ export const PokemonDetails = () => {
                                     </div>
                                 }
                             </div>
-                            <div className="search-wrapper" >
+                            <div className="search-wrapper-detail" >
                                 <form>
                                     <input
                                         type="text"
                                         placeholder="Search"
-                                        className="search-input"
+                                        className="search-input-detail"
                                         name="searchText"
                                         value={ searchText }
                                         onChange={ e => setSearchText(e.target.value) }
