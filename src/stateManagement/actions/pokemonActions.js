@@ -10,20 +10,23 @@ export const getPokemonList = (page) => {
                 type: types.POKEMON_LIST_LOADING
             });
 
-            const perPage = 65;
+            const perPage = 30;
             const offset = (page * perPage) - perPage;
 
-            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${perPage}&offset=${offset}`)
+            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${perPage}&offset=${offset}`);
+            const count = res.data.count;
 
-            const count = res.data.count ;
+            const pokemonList = res.data.results;
 
-            const promises = res.data.results.map( async(pokemon) => {
-                return await axios.get(`${pokemon.url}`)
+            //Multiples promesas en paralelo, donde cada elemento del array sea una promesa
+            const promises = pokemonList.map( async(pokemon) => {
+                let url = pokemon.url.substring(0, pokemon.url.length - 1);
+                return await axios.get(url);
             });
 
-            const results = await Promise.all(promises);
+            const pokemones = await Promise.all(promises);
 
-            let pokemonData = results.map((pokemon) => {
+            let pokemonData = pokemones.map((pokemon) => {
                 return pokemon.data;
             })
 
