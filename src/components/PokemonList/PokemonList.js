@@ -24,8 +24,10 @@ export const PokemonList = () => {
         searchText: q
     });
 
+    
     const { searchText } = formValues;
     const pokemonList  = useSelector(state => state.PokemonList);
+
 
     useEffect(() => {
         FetchData(1);
@@ -48,7 +50,7 @@ export const PokemonList = () => {
         pokemon.id.toString().includes(pokemonName) );
     }
 
-    const pokemonFiltered = getPokemonByName( searchText );
+    const pokemonFiltered = getPokemonByName( searchText.toLocaleLowerCase() );
 
     const handleSearch = (e) => {
         e.preventDefault();
