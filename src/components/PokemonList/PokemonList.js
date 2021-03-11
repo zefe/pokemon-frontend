@@ -94,7 +94,7 @@ export const PokemonList = () => {
         return (<p>Unable data</p>)
 
     }
-    
+
     return (
         <main>
             {
