@@ -84,8 +84,6 @@
     width: 30px;
 }
 
-
-
 .home-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -95,7 +93,10 @@
 
 .pagination-content {
     width: 100%;
-    margin: 2rem 0;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .pagination {
     display: flex;
@@ -147,10 +148,6 @@
     .main-content {
         margin: 0;
     }
-    
-    .pagination-content {
-        width: 40%;
-    }
 
 }
 
@@ -175,9 +172,6 @@
     
     .search-input {
         width: 340px;
-    }
-    .pagination-content {
-        display: none;
     }
 }
 
